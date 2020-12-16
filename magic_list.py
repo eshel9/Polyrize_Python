@@ -6,7 +6,10 @@ class MagicList(list):
         self.cls_type = cls_type
 
     def __setitem__(self, key, value):
-        if self.__len__() == key:
-            self.__add__([value])
-
-        super().__setitem__(key, value)
+        current_length = self.__len__()
+        if current_length == key:
+            self.append(value)
+        elif 0 < key < current_length:
+            super().__setitem__(key, value)
+        else:
+            raise IndexError("list index out of extended range")
