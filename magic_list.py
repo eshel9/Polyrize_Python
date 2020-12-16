@@ -9,7 +9,7 @@ class MagicList(list):
         current_length = self.__len__()
         if current_length == key:
             self.append(value)
-        elif 0 < key < current_length:
+        elif (-current_length - 1) < key < current_length:
             super().__setitem__(key, value)
         else:
             raise IndexError("list index out of extended range")
