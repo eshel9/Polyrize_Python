@@ -1,4 +1,10 @@
 from magic_list import MagicList
+from dataclasses import dataclass
+
+
+@dataclass
+class Person:
+    age: int = 1
 
 
 def main():
@@ -14,8 +20,14 @@ def main():
     a[-1] = 4   # should update last element
     print(a)
 
+    b = MagicList(cls_type=Person)
+    b[0].age = 5
+    print(b)
+
     # shouldn't work
-    a[3] = 5
+    b[2].age = 5
+    print(b)
+    a[3] = 6
     print(a)
 
 
