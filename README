@@ -1,0 +1,5 @@
+This is Eshel's Answer to Polyrize's python task.
+To run, simply do:
+    python3 ./main.py
+
+Feel free to change the usages to MagicList that are used in main.py.
